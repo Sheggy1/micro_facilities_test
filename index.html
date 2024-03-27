@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroFacilities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section class="main_page">
+
+    </section>
+    
+    <section class="create_facility">
+        <h1>Створення виробничих приміщень</h1>
+        <form id="facilityForm" action="http://localhost:3000/createFacility" method="POST">
+            <input name="facilityCode" placeholder="Код виробничого приміщення">
+            <input name="equipmentTypeCode" placeholder="Код типу технологічного обладнання">
+            <input name="equipmentCount" placeholder="Кількість обладнання згідно контракту">
+            <button type="submit">Create facility</button>
+        </form>
+    </section>
+    
+    <section class="create_tech">
+        <h1>Створення типів технологічного обладнання</h1>
+        <form id="techForm" action="http://localhost:3000/createTech" method="POST">
+            <input id="techCode" name="techCode" placeholder="Код технологічного обладнання">
+            <input id="techCodeType" name="techCodeType" placeholder="Найменування типу технологічного обладнання">
+            <input id="quantityTech" name="quantityTech" placeholder="Площа">
+            <button type="submit">Create tech</button>
+        </form>
+    </section>
+
+    <section class="create_contract">
+        <h1>Створення нового контракту розміщення обладнання</h1>
+        <form id="contractForm" action="http://localhost:3000/createContract" method="POST">
+            <input id="contractNumber" name="contractNumber" placeholder="Номер запису">
+            <input id="contractFacilityCode" name="contractFacilityCode" placeholder="Код виробничого приміщення">
+            <input id="contractEquipmentTypeCode" name="contractEquipmentTypeCode" placeholder="Код типу технологічного обладнання">
+            <input id="contractEquipmentCount" name="contractEquipmentCount" placeholder="Кількість обладнання згідно контракту">
+            <button type="submit">Create contract</button>
+        </form>
+    </section>
+
+    <section class="get_contracts">
+        <h1>Отримання поточного списку контрактів</h1>
+        <button onclick="getContracts()">Find</button>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
