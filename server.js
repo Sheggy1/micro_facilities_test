@@ -10,7 +10,7 @@ const pool = new Pool({
   host: '', //add ur personal
   database: '', //add ur personal
   password: '', //add ur personal
-  port: 5432,
+  port: , //add ur personal
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));

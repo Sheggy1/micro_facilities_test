@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroFacilities</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="src/favicon.png">
 </head>
 <body>
     
-    <section class="main_page">
-
-    </section>
+    <div id="roleModal" class="modal">
+        <div class="modal-content">
+          <h2 class="role_selection">Оберіть вашу роль</h2>
+          <button class="operator_role" onclick="selectRole('operator')">Оператор</button>
+          <button class="customer_role" onclick="selectRole('customer')">Замовник</button>
+        </div>
+    </div>
     
     <section class="create_facility">
         <h1>Створення виробничих приміщень</h1>
         <form id="facilityForm" action="http://localhost:3000/createFacility" method="POST">
             <input name="facilityCode" placeholder="Код виробничого приміщення">
             <input name="equipmentTypeCode" placeholder="Код типу технологічного обладнання">
-            <input name="equipmentCount" placeholder="Кількість обладнання згідно контракту">
-            <button type="submit">Create facility</button>
+            <input name="equipmentCount" placeholder="Кількість обладнання згідно контракту"> 
+            <button type="submit">Створити виробниче приміщення</button>
         </form>
     </section>
     
@@ -28,7 +33,7 @@
             <input id="techCode" name="techCode" placeholder="Код технологічного обладнання">
             <input id="techCodeType" name="techCodeType" placeholder="Найменування типу технологічного обладнання">
             <input id="quantityTech" name="quantityTech" placeholder="Площа">
-            <button type="submit">Create tech</button>
+            <button type="submit">Створити тех.обладнання</button>
         </form>
     </section>
 
@@ -39,13 +44,13 @@
             <input id="contractFacilityCode" name="contractFacilityCode" placeholder="Код виробничого приміщення">
             <input id="contractEquipmentTypeCode" name="contractEquipmentTypeCode" placeholder="Код типу технологічного обладнання">
             <input id="contractEquipmentCount" name="contractEquipmentCount" placeholder="Кількість обладнання згідно контракту">
-            <button type="submit">Create contract</button>
+            <button type="submit">Створити контракт</button>
         </form>
     </section>
 
     <section class="get_contracts">
         <h1>Отримання поточного списку контрактів</h1>
-        <button onclick="getContracts()">Find</button>
+        <button onclick="getContracts()">Пошук</button>
     </section>
     
     <script src="script.js"></script>

@@ -1,3 +1,32 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const roleModal = document.getElementById('roleModal');
+    roleModal.style.display = 'block';
+});
+
+function selectRole(role) {
+    localStorage.setItem('role', role); 
+    hideAllSections();
+    showSections(role);
+}
+
+function hideAllSections() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+}
+
+function showSections(role) {
+    if (role === 'operator') {
+        document.querySelector('.create_facility').style.display = 'block';
+        document.querySelector('.create_tech').style.display = 'block';
+        document.querySelector('.get_contracts').style.display = 'block';
+    } else if (role === 'customer') {
+        document.querySelector('.create_contract').style.display = 'block';
+        document.querySelector('.get_contracts').style.display = 'block';
+    }
+}
+
 function createFacility() {
     const facilityCode = document.getElementById('facilityCode').value;
     const equipmentTypeCode = document.getElementById('equipmentTypeCode').value;
